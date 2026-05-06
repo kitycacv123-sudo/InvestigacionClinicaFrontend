@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Investigación Clínica - Frontend</title>
+    <link rel="stylesheet" href="/styles.css" />
+
+    <!-- Swagger UI (sin build tools) -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swagger-ui-dist@5/swagger-ui.css"
+    />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <div class="sidebar-title">Laboratorio</div>
+          <div class="sidebar-subtitle">Diagnóstico médico</div>
+        </div>
+
+        <nav class="nav">
+          <a class="nav-link active" href="#/dashboard" data-route="dashboard">
+            <span class="nav-dot"></span>
+            Dashboard
+          </a>
+          <a class="nav-link" href="#/inicio" data-route="inicio">
+            <span class="nav-dot"></span>
+            Inicio (CRUD)
+          </a>
+          <div class="nav-sep"></div>
+          <a class="nav-link" href="#/api" data-route="api">
+            <span class="nav-dot"></span>
+            API Explorer
+          </a>
+          <a class="nav-link" href="#/settings" data-route="settings">
+            <span class="nav-dot"></span>
+            Configuración
+          </a>
+        </nav>
+      </aside>
+
+      <div class="content">
+        <header class="content-topbar">
+          <div class="brand">
+            <div class="dot"></div>
+            <div>
+              <div class="title" id="pageTitle">Dashboard laboratorio</div>
+              <div class="subtitle" id="pageSubtitle">Vista rápida para operación diaria.</div>
+            </div>
+          </div>
+
+          <div class="actions">
+            <a class="btn" href="/swagger" id="open-swagger" target="_blank" rel="noreferrer">Swagger (backend)</a>
+            <button class="btn primary" id="reload">Recargar</button>
+          </div>
+        </header>
+
+        <main class="container">
+          <!-- DASHBOARD -->
+          <section class="page" id="page-dashboard">
+            <div class="grid-cards">
+              <div class="card kpi">
+                <div class="kpi-title">Pendientes</div>
+                <div class="kpi-subtitle">Se encontraron órdenes de exámenes pendientes</div>
+                <div class="kpi-value" id="kpi-pendientes">—</div>
+                <button class="btn small" type="button">Ir a Orden examen</button>
+              </div>
+
+              <div class="card kpi">
+                <div class="kpi-title">Muestras por estado</div>
+                <div class="kpi-subtitle">Distribución (Activo/Listo/...)</div>
+                <div class="kpi-list" id="kpi-muestras">
+                  <div class="kpi-row"><span>Activo</span><span>—</span></div>
+                  <div class="kpi-row"><span>Listo</span><span>—</span></div>
+                </div>
+              </div>
+
+              <div class="card kpi">
+                <div class="kpi-title">Top exámenes</div>
+                <div class="kpi-subtitle">Más solicitados</div>
+                <div class="kpi-list" id="kpi-top">
+                  <div class="kpi-row"><span>Hemograma completo</span><span>—</span></div>
+                  <div class="kpi-row"><span>Glucosa en sangre</span><span>—</span></div>
+                  <div class="kpi-row"><span>Perfil lipídico</span><span>—</span></div>
+                </div>
+                <button class="btn small" type="button">Ver catálogo</button>
+              </div>
+            </div>
+
+            <div class="card section">
+              <div class="section-title">Tiempo por área (indicador operativo)</div>
+              <div class="table">
+                <div class="tr th">
+                  <div>área</div>
+                  <div>tiempoTotal</div>
+                </div>
+                <div class="tr">
+                  <div>Bioquímica</div>
+                  <div id="t-bio">40</div>
+                </div>
+                <div class="tr">
+                  <div>Hematología</div>
+                  <div id="t-hema">45</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card section">
+              <div class="section-title">Exámenes sin muestra (alerta operativa)</div>
+              <div class="muted">Sin alertas por ahora.</div>
+            </div>
+          </section>
+
+          <!-- API EXPLORER -->
+          <section class="page" id="page-api" hidden>
+            <div class="card">
+              <div id="swagger-ui"></div>
+            </div>
+          </section>
+
+          <!-- SETTINGS -->
+          <section class="page" id="page-settings" hidden>
+            <section class="card">
+              <div class="row">
+                <label for="backendUrl">Backend URL</label>
+                <input id="backendUrl" type="url" spellcheck="false" />
+                <button class="btn" id="saveBackend" type="button">Guardar</button>
+              </div>
+              <p class="hint">
+                Ejemplo:
+                <code>https://investigacionclinica-production.up.railway.app</code>
+              </p>
+            </section>
+          </section>
+
+          <!-- INICIO (CRUD) - placeholder -->
+          <section class="page" id="page-inicio" hidden>
+            <div class="card section">
+              <div class="section-title">Inicio (CRUD)</div>
+              <div class="muted">
+                Esta sección queda lista para agregar formularios CRUD reales. Por ahora, usa “API Explorer”.
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <script src="/config.js"></script>
+    <script src="https://unpkg.com/swagger-ui-dist@5/swagger-ui-bundle.js"></script>
+    <script src="https://unpkg.com/swagger-ui-dist@5/swagger-ui-standalone-preset.js"></script>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
+
