@@ -452,7 +452,7 @@ export const CONTROLLERS = {
         name: 'Asignar',
         method: 'POST',
         path: '/api/Recoleccion_Resultados/Asignar',
-        bodySchema: { CodigoRecoleccion: '', CodigoResultado: '' },
+        bodySchema: { Codigo: '', CodigoRecoleccion: '', CodigoResultado: '' },
       },
       {
         id: 'update',
@@ -463,7 +463,7 @@ export const CONTROLLERS = {
           { key: 'codigoRecoleccion', label: 'Código Recolección (URL)' },
           { key: 'codigoResultado', label: 'Código Resultado (URL)' },
         ],
-        bodySchema: { CodigoRecoleccion: '', CodigoResultado: '' },
+        bodySchema: { Codigo: '', CodigoRecoleccion: '', CodigoResultado: '' },
       },
       {
         id: 'delete',
