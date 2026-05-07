@@ -1,4 +1,11 @@
+function getRuntimeBaseUrl() {
+  const runtime =
+    typeof window !== 'undefined' && window.__BACKEND_URL__ ? String(window.__BACKEND_URL__) : '';
+  return runtime.replace(/\/+$/, '');
+}
+
 const DEFAULT_BASE_URL =
+  getRuntimeBaseUrl() ||
   import.meta.env.VITE_API_BASE_URL ||
   'https://investigacionclinica-production.up.railway.app';
 

@@ -1,5 +1,6 @@
 import express from 'express'
 import path from 'node:path'
+import fs from 'node:fs'
 import { fileURLToPath } from 'node:url'
 
 const __filename = fileURLToPath(import.meta.url)
@@ -17,11 +18,18 @@ app.get('/config.js', (_req, res) => {
   res.end(`window.__BACKEND_URL__ = ${JSON.stringify(BACKEND_URL)};`)
 })
 
-app.use(express.static(path.join(__dirname, 'public')))
+const distDir = path.join(__dirname, 'dist')
+if (!fs.existsSync(path.join(distDir, 'index.html'))) {
+  // eslint-disable-next-line no-console
+  console.warn(
+    '[startup] dist/index.html no existe. Asegúrate de ejecutar `npm run build` (en Railway esto lo hace postinstall).'
+  )
+}
+app.use(express.static(distDir, { index: false }))
 
 // Express v5 (path-to-regexp v6) doesn't accept '*' as a path pattern.
 app.get(/.*/, (_req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'))
+  res.sendFile(path.join(distDir, 'index.html'))
 })
 
 app.listen(PORT, '0.0.0.0', () => {
