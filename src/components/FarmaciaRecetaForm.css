@@ -1,0 +1,74 @@
+.farm-receta {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.detalles-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.detalles-title {
+  color: #e2e8f0;
+  font-weight: 800;
+}
+
+.mini-btn {
+  background: rgba(96, 165, 250, 0.14);
+  border: 1px solid rgba(96, 165, 250, 0.25);
+  color: #e2e8f0;
+  border-radius: 999px;
+  padding: 0.35rem 0.75rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.mini-btn:hover {
+  background: rgba(96, 165, 250, 0.2);
+}
+
+.mini-btn.danger {
+  background: rgba(244, 63, 94, 0.12);
+  border-color: rgba(244, 63, 94, 0.25);
+}
+
+.mini-btn.danger:hover {
+  background: rgba(244, 63, 94, 0.18);
+}
+
+.detalles-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.detalle-card {
+  background: rgba(2, 6, 23, 0.28);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  padding: 1rem;
+}
+
+.detalle-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.detalle-label {
+  color: #cbd5e1;
+  font-weight: 800;
+}
+
+.posologia-title {
+  margin: 0.75rem 0 0.5rem;
+  color: #94a3b8;
+  font-weight: 800;
+  font-size: 0.9rem;
+}
+

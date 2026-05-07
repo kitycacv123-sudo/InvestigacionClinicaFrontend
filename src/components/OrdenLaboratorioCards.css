@@ -1,0 +1,86 @@
+.ol-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1rem;
+}
+
+.ol-empty {
+  background: rgba(30, 41, 59, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 1rem 1.25rem;
+  color: #cbd5e1;
+}
+
+.ol-card {
+  background: rgba(30, 41, 59, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 1rem 1.25rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.ol-card-top {
+  margin-bottom: 0.75rem;
+}
+
+.ol-title {
+  color: #e2e8f0;
+  font-weight: 900;
+  font-size: 1.05rem;
+  line-height: 1.25;
+}
+
+.ol-subtitle {
+  margin-top: 0.25rem;
+  color: #94a3b8;
+  font-size: 0.9rem;
+}
+
+.ol-desc {
+  color: #cbd5e1;
+  font-size: 0.95rem;
+  line-height: 1.35;
+  margin-bottom: 0.75rem;
+}
+
+.ol-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.ol-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 26px;
+  padding: 0 0.65rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(2, 6, 23, 0.35);
+  color: #e2e8f0;
+}
+
+.ol-chip-neutral {
+  color: #cbd5e1;
+}
+
+.ol-chip-info {
+  color: #93c5fd;
+  border-color: rgba(147, 197, 253, 0.22);
+}
+
+.ol-chip-ok {
+  color: #86efac;
+  border-color: rgba(134, 239, 172, 0.22);
+}
+
+.ol-chip-warn {
+  color: #fcd34d;
+  border-color: rgba(252, 211, 77, 0.22);
+}
+

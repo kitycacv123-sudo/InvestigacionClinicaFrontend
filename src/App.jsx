@@ -17,17 +17,7 @@ import ResultadoSintomas from './views/ResultadoSintomas';
 import Resultados from './views/Resultados';
 import TipoSintomas from './views/TipoSintomas';
 import SwaggerDocs from './views/SwaggerDocs';
-
-function DashboardHome() {
-  return (
-    <div className='view-container'>
-      <div className='view-header'>
-        <h1>Dashboard</h1>
-        <p>Welcome to Clinica Admin Dashboard. Select an option from the sidebar.</p>
-      </div>
-    </div>
-  );
-}
+import DashboardHome from './views/DashboardHome';
 
 function App() {
   return (
